@@ -10,4 +10,10 @@ use Illuminate\Routing\Controller as BaseController;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    public function ExampleFunction() {
+        $publicKey = config('parameters.key');
+        config('parameters.key', 'my-other-key');
+        $publicKey = config('parameters.key');
+    }
 }
